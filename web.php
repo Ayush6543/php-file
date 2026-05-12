@@ -1,8 +1,14 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
+
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
+
+use App\Http\Controllers\studentController;
+
+use App\Http\Controllers\PersonalInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +49,13 @@ Route::get('user/{name}',[UserController::class,'getUserName']);
 Route::get('admin-login',[UserController::class,'adminLogin']);
 
 Route::get('/user-home',[UserController::class,'userHome']);
+
+
+
+
+Route::get('/users',[studentController::class,'getStudents']); 
+
+
+Route::get('/employee',[EmployeeController::class,'getemployee']);
+
+Route::resource('personal',PersonalInfoController::class);
